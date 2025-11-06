@@ -22,13 +22,14 @@ class FrontService
             $this->sellerRepository = $sellerRepository;
       }
 
+      // App\Services\FrontService.php
       public function getFrontPageData()
       {
             $categories = $this->categoryRepository->getAllCategories();
             $sellers = $this->sellerRepository->getAllSellers();
-            $tickets = $this->ticketRepository->getPopularTickets(4);
+            $popularTickets = $this->ticketRepository->getPopularTickets(4);
             $newTickets = $this->ticketRepository->getAllNewTickets(4);
 
-            return compact('categories', 'sellers', 'tickets', 'newTickets');
+            return compact('categories', 'sellers', 'popularTickets', 'newTickets');
       }
 }

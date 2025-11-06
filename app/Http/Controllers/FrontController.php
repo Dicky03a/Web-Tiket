@@ -18,11 +18,13 @@ class FrontController extends Controller
     }
 
 
+    // App\Http\Controllers\FrontController.php
     public function index()
     {
         $data = $this->frontService->getFrontPageData();
-        return view('front.index', compact('data'));
+        return view('front.index', $data);
     }
+
 
 
     public function details(Ticket $ticket)
@@ -32,6 +34,6 @@ class FrontController extends Controller
 
     public function category(Category $category)
     {
-        return view('front.category', compact('categories', 'category'));
+        return view('front.category', compact('category'));
     }
 }
