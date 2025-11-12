@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Jobs\SendBookingConfirmedEmail;
 use App\Models\BookingTransaction;
 use App\Models\Ticket;
 use App\Repositories\Contracts\BookingRepositoryInterface;
@@ -17,6 +18,11 @@ class BookingService
       {
             $this->ticketRepository = $ticketRepository;
             $this->bookingRepository = $bookingRepository;
+      }
+
+      public function getBookingDdetails(array $validated)
+      {
+            return $this->bookingRepository->findByTrxIdAndPhoneNumber($validated['booking_trx_id'], $validated['phone_number']);
       }
 
       public function calculateTotals($ticketId, $totalParticipant)
@@ -79,6 +85,9 @@ class BookingService
                   $newBooking = $this->bookingRepository->createBooking($validated);
 
                   $bookingTransactionId = $newBooking->id;
+
+
+                  SendBookingConfirmedEmail::dispatch($newBooking);
             });
 
             return $bookingTransactionId;
