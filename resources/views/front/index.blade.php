@@ -14,11 +14,11 @@
 <body>
       <div class="relative flex flex-col w-full min-h-screen max-w-[640px] mx-auto bg-white">
             <div id="Top-Nav" class="flex items-center justify-between w-full px-4 mt-[60px]">
-                  <a href="index.html">
-                        <img src="{{asset('assets/images/logos/logo.svg')}}" class="flex shrink-0" alt="logo">
+                  <a href="{{ route('front.index') }}" class="logo">
+                        <h2 class="font-semibold text-2xl">EVENT HIMSI</h2>
                   </a>
                   <a href="#">
-                        <img src="{{asset('assets/images/icons/heart-fill.svg')}}" class="w-12 h-12" alt="icon">
+                        <img src="{{asset('assets/images/logos/HIMSI.png')}}" class="w-12 h-12" alt="icon">
                   </a>
             </div>
             <main class="flex flex-col w-full gap-5 mt-5 overflow-x-hidden">
