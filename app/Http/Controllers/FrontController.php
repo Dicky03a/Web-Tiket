@@ -30,6 +30,11 @@ class FrontController extends Controller
 
     public function details(Ticket $ticket)
     {
+        // Memastikan bahwa tiket telah disetujui sebelum bisa ditampilkan
+        if (!$ticket->isLatestApprovalApproved()) {
+            abort(404); // atau redirect ke halaman lain jika tiket tidak disetujui
+        }
+
         return view('front.details', compact('ticket'));
     }
 

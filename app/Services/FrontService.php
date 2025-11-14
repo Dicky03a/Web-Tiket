@@ -28,7 +28,7 @@ class FrontService
             $categories = $this->categoryRepository->getAllCategories();
             $narahubung = $this->narahubungRepository->getAllNarahubung();
             $popularTickets = $this->ticketRepository->getPopularTickets(4);
-            $newTickets = $this->ticketRepository->getAllNewTickets(4);
+            $newTickets = $this->ticketRepository->getAllNewTickets();
 
             return compact('categories', 'narahubung', 'popularTickets', 'newTickets');
       }

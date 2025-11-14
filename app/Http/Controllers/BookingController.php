@@ -22,11 +22,21 @@ class BookingController extends Controller
 
     public function booking(Ticket $ticket)
     {
+        // Memastikan bahwa tiket telah disetujui sebelum bisa dibooking
+        if (!$ticket->isLatestApprovalApproved()) {
+            abort(404); // atau redirect ke halaman lain jika tiket tidak disetujui
+        }
+
         return view('front.booking', compact('ticket'));
     }
 
     public function bookingStore(Ticket $ticket, StoreBookingRequest $request)
     {
+        // Memastikan bahwa tiket telah disetujui sebelum bisa dibooking
+        if (!$ticket->isLatestApprovalApproved()) {
+            abort(404); // atau redirect ke halaman lain jika tiket tidak disetujui
+        }
+
         $validated = $request->validated();
 
         // Check if 'total_participant' exists in validated data
