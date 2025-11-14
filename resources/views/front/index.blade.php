@@ -81,15 +81,15 @@
                         <div class="swiper-visit w-full overflow-hidden">
                               <div class="swiper-wrapper">
 
-                                    @forelse ($sellers as $itemSeller)
+                                    @forelse ($narahubung as $itemNarahubung)
                                     <div class="swiper-slide !w-fit">
-                                          <a href="{{ route('front.seller', $itemSeller->slug) }}" class="card">
+                                          <a href="{{ route('front.narahubung', $itemNarahubung->slug) }}" class="card">
                                                 <div class="relative flex items-end w-[170px] h-[200px] shrink-0 rounded-[30px] bg-[#D9D9D9] overflow-hidden">
-                                                      <img src="{{Storage::url($itemSeller->photo)}}" class="absolute w-full h-full object-cover" alt="thumbnail">
+                                                      <img src="{{Storage::url($itemNarahubung->photo)}}" class="absolute w-full h-full object-cover" alt="thumbnail">
                                                       <div class="flex items-center justify-between w-full h-fit rounded-[17px] border border-white/40 p-[8px_10px] mx-[10px] mb-[10px] bg-[#94959966] backdrop-blur-sm">
                                                             <div>
-                                                                  <h3 class="font-bold text-white">{{$itemSeller->name}}</h3>
-                                                                  <p class="text-sm leading-[18px] text-white">{{$itemSeller->tickets->count()}} Places</p>
+                                                                  <h3 class="font-bold text-white">{{$itemNarahubung->name}}</h3>
+                                                                  <p class="text-sm leading-[18px] text-white">{{$itemNarahubung->tickets->count()}} Places</p>
                                                             </div>
                                                       </div>
                                                 </div>
@@ -118,7 +118,7 @@
                                                       <h3 class="font-semibold">{{$itemTicket->name}}</h3>
                                                       <div class="flex items-center gap-1">
                                                             <img src="{{asset('assets/images/icons/location.svg')}}" class="w-[18px] h-[18px]" alt="icon">
-                                                            <p class="font-semibold text-xs leading-[18px]">{{$itemTicket->seller->name}}</p>
+                                                            <p class="font-semibold text-xs leading-[18px]">{{$itemTicket->narahubung->name}}</p>
                                                       </div>
                                                       <p class="font-bold text-sm leading-[21px] text-[#F97316]">Rp {{number_format($itemTicket->price, 0, ',', '.')}}</p>
                                                 </div>

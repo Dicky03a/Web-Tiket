@@ -40,7 +40,7 @@
                                     <h3 class="font-semibold">{{ $ticket->name }}</h3>
                                     <div class="flex items-center gap-1">
                                           <img src="{{ asset('assets/images/icons/location.svg') }}" class="w-[18px] h-[18px]" alt="icon">
-                                          <p class="font-semibold text-xs leading-[18px]">{{ $ticket->seller->name }}</p>
+                                          <p class="font-semibold text-xs leading-[18px]">{{ $ticket->narahubung->name }}</p>
                                     </div>
                                     <p class="font-bold text-sm leading-[21px] text-[#F97316]">Rp {{ number_format($ticket->price, 0, ',', '.') }}</p>
                                     <input type="hidden" name="realTicketPrice" id="realTicketPrice" value="{{ $ticket->price }}">

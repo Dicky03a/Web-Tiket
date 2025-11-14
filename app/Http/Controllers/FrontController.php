@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\Seller;
+use App\Models\Narahubung;
 use App\Models\Ticket;
 use App\Services\FrontService;
 use Illuminate\Http\Request;
@@ -38,8 +38,8 @@ class FrontController extends Controller
         return view('front.category', compact('category'));
     }
 
-    public function explore(Seller $seller)
+    public function explore(Narahubung $narahubung)
     {
-        return view('front.seller', compact('seller'));
+        return view('front.narahubung', compact('narahubung'));
     }
 }

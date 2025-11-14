@@ -88,8 +88,8 @@ class TicketResource extends Resource
                             ->preload()
                             ->required(),
 
-                        Select::make('seller_id')
-                            ->relationship('seller', 'name')
+                        Select::make('narahubung_id')
+                            ->relationship('narahubung', 'name')
                             ->searchable()
                             ->preload()
                             ->required(),

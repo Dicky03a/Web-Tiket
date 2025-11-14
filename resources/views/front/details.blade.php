@@ -128,11 +128,11 @@
                         <div class="flex items-center justify-between rounded-3xl p-[10px] pr-[14px] bg-[#F8F8F9]">
                               <div class="flex items-center gap-[14px]">
                                     <div class="w-[60px] h-[60px] rounded-[20px] overflow-hidden">
-                                          <img src="{{ Storage::url($ticket->seller->photo) }}" class="w-full h-full object-cover" alt="">
+                                          <img src="{{ Storage::url($ticket->narahubung->photo) }}" class="w-full h-full object-cover" alt="">
                                     </div>
                                     <div>
-                                          <p class="font-bold text-lg leading-[27px]">{{ $ticket->seller->name }}</p>
-                                          <p class="text-sm leading-[21px]">{{($ticket->seller->tickets->count()) }} Places</p>
+                                          <p class="font-bold text-lg leading-[27px]">{{ $ticket->narahubung->name }}</p>
+                                          <p class="text-sm leading-[21px]">{{($ticket->narahubung->tickets->count()) }} Places</p>
                                     </div>
                               </div>
                               <a href="#">

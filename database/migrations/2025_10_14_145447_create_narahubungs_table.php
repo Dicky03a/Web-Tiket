@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sellers', function (Blueprint $table) {
+        Schema::create('narahubungs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('telephone');
-            $table->string('location');
-            $table->string('slug');
-            $table->string('photo');
-            $table->softDeletes();
+            $table->string('telephone')->nullable();
+            $table->string('location')->nullable();
+            $table->string('slug')->unique();
+            $table->string('photo')->nullable(); // simpan path foto
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sellers');
+        Schema::dropIfExists('narahubung');
     }
 };

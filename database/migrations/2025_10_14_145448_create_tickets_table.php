@@ -24,8 +24,7 @@ return new class extends Migration
             $table->time('open_time_at');
             $table->time('close_time_at');
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('seller_id')->constrained()->cascadeOnDelete();
-
+            $table->foreignId('narahubung_id')->constrained('narahubungs')->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
         });

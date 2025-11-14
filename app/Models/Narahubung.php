@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
-class Seller extends Model
+class Narahubung extends Model
 {
     use HasFactory, SoftDeletes;
 

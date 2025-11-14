@@ -11,7 +11,7 @@ class Ticket extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['name', 'thumbnail', 'address', 'path_video', 'price', 'is_popular', 'about', 'open_time_at', 'close_time_at', 'category_id', 'seller_id', 'slug'];
+    protected $fillable = ['name', 'thumbnail', 'address', 'path_video', 'price', 'is_popular', 'about', 'open_time_at', 'close_time_at', 'category_id', 'narahubung_id', 'slug'];
 
     public function setNameAttribute($value)
     {
@@ -24,9 +24,9 @@ class Ticket extends Model
         return $this->belongsTo(Category::class, 'category_id');
     }
 
-    public function seller()
+    public function narahubung()
     {
-        return $this->belongsTo(Seller::class, 'seller_id');
+        return $this->belongsTo(Narahubung::class, 'narahubung_id');
     }
 
     public function photos()

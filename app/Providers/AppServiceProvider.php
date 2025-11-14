@@ -7,9 +7,9 @@ use App\Repositories\CategoryRepository;
 use App\Repositories\TicketRepository;
 use App\Repositories\Contracts\BookingRepositoryInterface;
 use App\Repositories\Contracts\CategoryRepositoryInterface;
-use App\Repositories\Contracts\SellerRepositoryInterface;
+use App\Repositories\Contracts\NarahubungRepositoryInterface;
 use App\Repositories\Contracts\TicketRepositoryInterface;
-use App\Repositories\SellerRepository;
+use App\Repositories\NarahubungRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(TicketRepositoryInterface::class, TicketRepository::class);
         $this->app->singleton(BookingRepositoryInterface::class, BookingRepository::class);
         $this->app->singleton(CategoryRepositoryInterface::class, CategoryRepository::class);
-        $this->app->singleton(SellerRepositoryInterface::class, SellerRepository::class);
+        $this->app->singleton(NarahubungRepositoryInterface::class, NarahubungRepository::class);
     }
 
     /**
